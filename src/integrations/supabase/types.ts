@@ -850,16 +850,9 @@ export type Database = {
       }
     }
     Views: {
-      __grant_check: {
-        Row: {
-          grantees: string | null
-          table_name: unknown
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
-      __apply_migration: { Args: { sql: string }; Returns: undefined }
       get_credit_usage_summary: { Args: { p_days?: number }; Returns: Json }
       get_daily_usage_count: { Args: { p_api_key_id: string }; Returns: number }
       get_mini_app_quota_status: { Args: { p_user_id?: string }; Returns: Json }
