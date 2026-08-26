@@ -333,6 +333,27 @@ export type Database = {
         }
         Relationships: []
       }
+      keepalive_heartbeat: {
+        Row: {
+          created_at: string
+          id: string
+          pinged_at: string
+          source: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          pinged_at?: string
+          source?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          pinged_at?: string
+          source?: string
+        }
+        Relationships: []
+      }
       knowledge_feedback: {
         Row: {
           created_at: string
