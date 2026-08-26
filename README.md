@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# New Beginnings Project
+
+TẠO GIÚP CON MỘT DỰ ÁN MỚI, TRANG TRẮNG HOÀN TOÀN, CHƯA KẾT NỐI CƠ SỞ DỮ LIỆU
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://blank-canvas-start-2673.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/3d1b0d09-13a5-4cde-a81c-7faa9e299a50).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
