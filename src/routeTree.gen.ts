@@ -41,6 +41,7 @@ import { Route as MiniAppsIndexRouteImport } from './routes/mini-apps.index'
 import { Route as MiniAppsIdRouteImport } from './routes/mini-apps.$id'
 import { Route as AdminSecurityApplicationKeysRouteImport } from './routes/admin.security.application-keys'
 import { Route as AdminShareKeyIdRouteImport } from './routes/admin.share-key.$id'
+import { Route as ApiPublicKeepaliveRouteImport } from './routes/api/public/keepalive'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -203,6 +204,11 @@ const AdminShareKeyIdRoute = AdminShareKeyIdRouteImport.update({
   path: '/admin/share-key/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicKeepaliveRoute = ApiPublicKeepaliveRouteImport.update({
+  id: '/api/public/keepalive',
+  path: '/api/public/keepalive',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -237,6 +243,7 @@ export interface FileRoutesByFullPath {
   '/mini-apps/': typeof MiniAppsIndexRoute
   '/admin/security/application-keys': typeof AdminSecurityApplicationKeysRoute
   '/admin/share-key/$id': typeof AdminShareKeyIdRoute
+  '/api/public/keepalive': typeof ApiPublicKeepaliveRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -271,6 +278,7 @@ export interface FileRoutesByTo {
   '/mini-apps': typeof MiniAppsIndexRoute
   '/admin/security/application-keys': typeof AdminSecurityApplicationKeysRoute
   '/admin/share-key/$id': typeof AdminShareKeyIdRoute
+  '/api/public/keepalive': typeof ApiPublicKeepaliveRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -306,6 +314,7 @@ export interface FileRoutesById {
   '/mini-apps/': typeof MiniAppsIndexRoute
   '/admin/security/application-keys': typeof AdminSecurityApplicationKeysRoute
   '/admin/share-key/$id': typeof AdminShareKeyIdRoute
+  '/api/public/keepalive': typeof ApiPublicKeepaliveRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -342,6 +351,7 @@ export interface FileRouteTypes {
     | '/mini-apps/'
     | '/admin/security/application-keys'
     | '/admin/share-key/$id'
+    | '/api/public/keepalive'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -376,6 +386,7 @@ export interface FileRouteTypes {
     | '/mini-apps'
     | '/admin/security/application-keys'
     | '/admin/share-key/$id'
+    | '/api/public/keepalive'
   id:
     | '__root__'
     | '/'
@@ -410,6 +421,7 @@ export interface FileRouteTypes {
     | '/mini-apps/'
     | '/admin/security/application-keys'
     | '/admin/share-key/$id'
+    | '/api/public/keepalive'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -445,6 +457,7 @@ export interface RootRouteChildren {
   MiniAppsIndexRoute: typeof MiniAppsIndexRoute
   AdminSecurityApplicationKeysRoute: typeof AdminSecurityApplicationKeysRoute
   AdminShareKeyIdRoute: typeof AdminShareKeyIdRoute
+  ApiPublicKeepaliveRoute: typeof ApiPublicKeepaliveRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -673,6 +686,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminShareKeyIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/keepalive': {
+      id: '/api/public/keepalive'
+      path: '/api/public/keepalive'
+      fullPath: '/api/public/keepalive'
+      preLoaderRoute: typeof ApiPublicKeepaliveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -709,6 +729,7 @@ const rootRouteChildren: RootRouteChildren = {
   MiniAppsIndexRoute: MiniAppsIndexRoute,
   AdminSecurityApplicationKeysRoute: AdminSecurityApplicationKeysRoute,
   AdminShareKeyIdRoute: AdminShareKeyIdRoute,
+  ApiPublicKeepaliveRoute: ApiPublicKeepaliveRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
