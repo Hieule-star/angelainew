@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link } from "@/lib/router-compat";
 import { 
   Sparkles, Crown, Eye, Scale, Heart, Coins, 
   Users, Wallet, MessageCircle, Home, Star,

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link } from "@/lib/router-compat";
 import { Bell, Globe, Shield, HelpCircle, ChevronRight, Moon, Sun } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';

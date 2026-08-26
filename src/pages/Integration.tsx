@@ -19,7 +19,7 @@ import {
   CheckCircle2,
   Lightbulb,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 
 const ENDPOINT =
   "https://sasbfslupxdsaqifnqzx.supabase.co/functions/v1/angel-ai-public";

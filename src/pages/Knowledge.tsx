@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { useKnowledgeTopics } from '@/hooks/useKnowledgeTopics';
 import { useIsAdmin } from '@/hooks/useIsAdmin';
 import type { KnowledgeTopic } from '@/types';
-import { Link, useSearchParams, useNavigate } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from "@/lib/router-compat";
 import { useToast } from '@/hooks/use-toast';
 
 export default function Knowledge() {

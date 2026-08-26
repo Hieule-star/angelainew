@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Users, BookOpen, MessageSquare, Shield, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from "@/lib/router-compat";
 import { AdminLayout } from '@/components/admin/AdminLayout';
 import { StatsCard } from '@/components/admin/StatsCard';
 import { Card } from '@/components/ui/card';

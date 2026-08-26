@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "@/lib/router-compat";
 import { OnboardingChecklist } from '@/components/onboarding/OnboardingChecklist';
 import { useUserStore } from '@/stores/userStore';
 import { useToast } from '@/hooks/use-toast';

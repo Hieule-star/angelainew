@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, ImageIcon, Video, Menu, PanelLeft, PanelLeftClose, BookOpen } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from "@/lib/router-compat";
 import { ChatBubble } from '@/components/chat/ChatBubble';
 import { ChatInput } from '@/components/chat/ChatInput';
 import { SuggestedQuestions } from '@/components/chat/SuggestedQuestions';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from "@/lib/router-compat";
 import { 
   Plus, MessageSquare, Trash2, Edit2, Check, X, ChevronLeft,
   Home, User, Wallet, Code, ImageIcon, Video, MessageCircle,

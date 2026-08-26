@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link } from "@/lib/router-compat";
 import { AdminLayout } from "@/components/admin/AdminLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";

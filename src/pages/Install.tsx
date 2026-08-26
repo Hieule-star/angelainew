@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Download, Smartphone, Share, MoreVertical, Plus, Check, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Layout } from '@/components/layout/Layout';
-import { Link } from 'react-router-dom';
+import { Link } from "@/lib/router-compat";
 import angelLogo from '@/assets/angel-logo.png';
 
 interface BeforeInstallPromptEvent extends Event {

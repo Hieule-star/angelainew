@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link } from "@/lib/router-compat";
 import { MessageCircle, BookOpen, Sparkles, Heart, Users, Wallet, Download, Scroll, Crown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Layout } from '@/components/layout/Layout';
