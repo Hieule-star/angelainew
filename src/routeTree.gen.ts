@@ -10,33 +10,441 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChatRouteImport } from './routes/chat'
+import { Route as CtoRouteImport } from './routes/cto'
+import { Route as InstallRouteImport } from './routes/install'
+import { Route as IntegrationRouteImport } from './routes/integration'
+import { Route as KnowledgeRouteImport } from './routes/knowledge'
+import { Route as LightConstitutionRouteImport } from './routes/light-constitution'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as WalletRouteImport } from './routes/wallet'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminApiAnalyticsRouteImport } from './routes/admin.api-analytics'
+import { Route as AdminApiKeysRouteImport } from './routes/admin.api-keys'
+import { Route as AdminChatRouteImport } from './routes/admin.chat'
+import { Route as AdminCreditUsageRouteImport } from './routes/admin.credit-usage'
+import { Route as AdminKnowledgeRouteImport } from './routes/admin.knowledge'
+import { Route as AdminKnowledgeListRouteImport } from './routes/admin.knowledge-list'
+import { Route as AdminMiniAppQuotasRouteImport } from './routes/admin.mini-app-quotas'
+import { Route as AdminRagDebugRouteImport } from './routes/admin.rag-debug'
+import { Route as AdminRolesRouteImport } from './routes/admin.roles'
+import { Route as AdminSystemPromptsRouteImport } from './routes/admin.system-prompts'
+import { Route as AdminUsersRouteImport } from './routes/admin.users'
+import { Route as DevelopersIndexRouteImport } from './routes/developers.index'
+import { Route as DevelopersKeysRouteImport } from './routes/developers.keys'
+import { Route as DocsInternalAuthRouteImport } from './routes/docs.internal-auth'
+import { Route as DocsPlatformRouteImport } from './routes/docs.platform'
+import { Route as MiniAppsIndexRouteImport } from './routes/mini-apps.index'
+import { Route as MiniAppsIdRouteImport } from './routes/mini-apps.$id'
+import { Route as AdminSecurityApplicationKeysRouteImport } from './routes/admin.security.application-keys'
+import { Route as AdminShareKeyIdRouteImport } from './routes/admin.share-key.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CtoRoute = CtoRouteImport.update({
+  id: '/cto',
+  path: '/cto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstallRoute = InstallRouteImport.update({
+  id: '/install',
+  path: '/install',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntegrationRoute = IntegrationRouteImport.update({
+  id: '/integration',
+  path: '/integration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KnowledgeRoute = KnowledgeRouteImport.update({
+  id: '/knowledge',
+  path: '/knowledge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LightConstitutionRoute = LightConstitutionRouteImport.update({
+  id: '/light-constitution',
+  path: '/light-constitution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WalletRoute = WalletRouteImport.update({
+  id: '/wallet',
+  path: '/wallet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminApiAnalyticsRoute = AdminApiAnalyticsRouteImport.update({
+  id: '/admin/api-analytics',
+  path: '/admin/api-analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminApiKeysRoute = AdminApiKeysRouteImport.update({
+  id: '/admin/api-keys',
+  path: '/admin/api-keys',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminChatRoute = AdminChatRouteImport.update({
+  id: '/admin/chat',
+  path: '/admin/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCreditUsageRoute = AdminCreditUsageRouteImport.update({
+  id: '/admin/credit-usage',
+  path: '/admin/credit-usage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminKnowledgeRoute = AdminKnowledgeRouteImport.update({
+  id: '/admin/knowledge',
+  path: '/admin/knowledge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminKnowledgeListRoute = AdminKnowledgeListRouteImport.update({
+  id: '/admin/knowledge-list',
+  path: '/admin/knowledge-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminMiniAppQuotasRoute = AdminMiniAppQuotasRouteImport.update({
+  id: '/admin/mini-app-quotas',
+  path: '/admin/mini-app-quotas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRagDebugRoute = AdminRagDebugRouteImport.update({
+  id: '/admin/rag-debug',
+  path: '/admin/rag-debug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRolesRoute = AdminRolesRouteImport.update({
+  id: '/admin/roles',
+  path: '/admin/roles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSystemPromptsRoute = AdminSystemPromptsRouteImport.update({
+  id: '/admin/system-prompts',
+  path: '/admin/system-prompts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevelopersIndexRoute = DevelopersIndexRouteImport.update({
+  id: '/developers/',
+  path: '/developers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevelopersKeysRoute = DevelopersKeysRouteImport.update({
+  id: '/developers/keys',
+  path: '/developers/keys',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsInternalAuthRoute = DocsInternalAuthRouteImport.update({
+  id: '/docs/internal-auth',
+  path: '/docs/internal-auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsPlatformRoute = DocsPlatformRouteImport.update({
+  id: '/docs/platform',
+  path: '/docs/platform',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MiniAppsIndexRoute = MiniAppsIndexRouteImport.update({
+  id: '/mini-apps/',
+  path: '/mini-apps/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MiniAppsIdRoute = MiniAppsIdRouteImport.update({
+  id: '/mini-apps/$id',
+  path: '/mini-apps/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSecurityApplicationKeysRoute =
+  AdminSecurityApplicationKeysRouteImport.update({
+    id: '/admin/security/application-keys',
+    path: '/admin/security/application-keys',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdminShareKeyIdRoute = AdminShareKeyIdRouteImport.update({
+  id: '/admin/share-key/$id',
+  path: '/admin/share-key/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/cto': typeof CtoRoute
+  '/install': typeof InstallRoute
+  '/integration': typeof IntegrationRoute
+  '/knowledge': typeof KnowledgeRoute
+  '/light-constitution': typeof LightConstitutionRoute
+  '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
+  '/wallet': typeof WalletRoute
+  '/admin/api-analytics': typeof AdminApiAnalyticsRoute
+  '/admin/api-keys': typeof AdminApiKeysRoute
+  '/admin/chat': typeof AdminChatRoute
+  '/admin/credit-usage': typeof AdminCreditUsageRoute
+  '/admin/knowledge': typeof AdminKnowledgeRoute
+  '/admin/knowledge-list': typeof AdminKnowledgeListRoute
+  '/admin/mini-app-quotas': typeof AdminMiniAppQuotasRoute
+  '/admin/rag-debug': typeof AdminRagDebugRoute
+  '/admin/roles': typeof AdminRolesRoute
+  '/admin/system-prompts': typeof AdminSystemPromptsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/developers/keys': typeof DevelopersKeysRoute
+  '/docs/internal-auth': typeof DocsInternalAuthRoute
+  '/docs/platform': typeof DocsPlatformRoute
+  '/mini-apps/$id': typeof MiniAppsIdRoute
+  '/admin/': typeof AdminIndexRoute
+  '/developers/': typeof DevelopersIndexRoute
+  '/mini-apps/': typeof MiniAppsIndexRoute
+  '/admin/security/application-keys': typeof AdminSecurityApplicationKeysRoute
+  '/admin/share-key/$id': typeof AdminShareKeyIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/cto': typeof CtoRoute
+  '/install': typeof InstallRoute
+  '/integration': typeof IntegrationRoute
+  '/knowledge': typeof KnowledgeRoute
+  '/light-constitution': typeof LightConstitutionRoute
+  '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
+  '/wallet': typeof WalletRoute
+  '/admin/api-analytics': typeof AdminApiAnalyticsRoute
+  '/admin/api-keys': typeof AdminApiKeysRoute
+  '/admin/chat': typeof AdminChatRoute
+  '/admin/credit-usage': typeof AdminCreditUsageRoute
+  '/admin/knowledge': typeof AdminKnowledgeRoute
+  '/admin/knowledge-list': typeof AdminKnowledgeListRoute
+  '/admin/mini-app-quotas': typeof AdminMiniAppQuotasRoute
+  '/admin/rag-debug': typeof AdminRagDebugRoute
+  '/admin/roles': typeof AdminRolesRoute
+  '/admin/system-prompts': typeof AdminSystemPromptsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/developers/keys': typeof DevelopersKeysRoute
+  '/docs/internal-auth': typeof DocsInternalAuthRoute
+  '/docs/platform': typeof DocsPlatformRoute
+  '/mini-apps/$id': typeof MiniAppsIdRoute
+  '/admin': typeof AdminIndexRoute
+  '/developers': typeof DevelopersIndexRoute
+  '/mini-apps': typeof MiniAppsIndexRoute
+  '/admin/security/application-keys': typeof AdminSecurityApplicationKeysRoute
+  '/admin/share-key/$id': typeof AdminShareKeyIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chat': typeof ChatRoute
+  '/cto': typeof CtoRoute
+  '/install': typeof InstallRoute
+  '/integration': typeof IntegrationRoute
+  '/knowledge': typeof KnowledgeRoute
+  '/light-constitution': typeof LightConstitutionRoute
+  '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
+  '/wallet': typeof WalletRoute
+  '/admin/api-analytics': typeof AdminApiAnalyticsRoute
+  '/admin/api-keys': typeof AdminApiKeysRoute
+  '/admin/chat': typeof AdminChatRoute
+  '/admin/credit-usage': typeof AdminCreditUsageRoute
+  '/admin/knowledge': typeof AdminKnowledgeRoute
+  '/admin/knowledge-list': typeof AdminKnowledgeListRoute
+  '/admin/mini-app-quotas': typeof AdminMiniAppQuotasRoute
+  '/admin/rag-debug': typeof AdminRagDebugRoute
+  '/admin/roles': typeof AdminRolesRoute
+  '/admin/system-prompts': typeof AdminSystemPromptsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/developers/keys': typeof DevelopersKeysRoute
+  '/docs/internal-auth': typeof DocsInternalAuthRoute
+  '/docs/platform': typeof DocsPlatformRoute
+  '/mini-apps/$id': typeof MiniAppsIdRoute
+  '/admin/': typeof AdminIndexRoute
+  '/developers/': typeof DevelopersIndexRoute
+  '/mini-apps/': typeof MiniAppsIndexRoute
+  '/admin/security/application-keys': typeof AdminSecurityApplicationKeysRoute
+  '/admin/share-key/$id': typeof AdminShareKeyIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/chat'
+    | '/cto'
+    | '/install'
+    | '/integration'
+    | '/knowledge'
+    | '/light-constitution'
+    | '/login'
+    | '/onboarding'
+    | '/profile'
+    | '/settings'
+    | '/wallet'
+    | '/admin/api-analytics'
+    | '/admin/api-keys'
+    | '/admin/chat'
+    | '/admin/credit-usage'
+    | '/admin/knowledge'
+    | '/admin/knowledge-list'
+    | '/admin/mini-app-quotas'
+    | '/admin/rag-debug'
+    | '/admin/roles'
+    | '/admin/system-prompts'
+    | '/admin/users'
+    | '/developers/keys'
+    | '/docs/internal-auth'
+    | '/docs/platform'
+    | '/mini-apps/$id'
+    | '/admin/'
+    | '/developers/'
+    | '/mini-apps/'
+    | '/admin/security/application-keys'
+    | '/admin/share-key/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/chat'
+    | '/cto'
+    | '/install'
+    | '/integration'
+    | '/knowledge'
+    | '/light-constitution'
+    | '/login'
+    | '/onboarding'
+    | '/profile'
+    | '/settings'
+    | '/wallet'
+    | '/admin/api-analytics'
+    | '/admin/api-keys'
+    | '/admin/chat'
+    | '/admin/credit-usage'
+    | '/admin/knowledge'
+    | '/admin/knowledge-list'
+    | '/admin/mini-app-quotas'
+    | '/admin/rag-debug'
+    | '/admin/roles'
+    | '/admin/system-prompts'
+    | '/admin/users'
+    | '/developers/keys'
+    | '/docs/internal-auth'
+    | '/docs/platform'
+    | '/mini-apps/$id'
+    | '/admin'
+    | '/developers'
+    | '/mini-apps'
+    | '/admin/security/application-keys'
+    | '/admin/share-key/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/chat'
+    | '/cto'
+    | '/install'
+    | '/integration'
+    | '/knowledge'
+    | '/light-constitution'
+    | '/login'
+    | '/onboarding'
+    | '/profile'
+    | '/settings'
+    | '/wallet'
+    | '/admin/api-analytics'
+    | '/admin/api-keys'
+    | '/admin/chat'
+    | '/admin/credit-usage'
+    | '/admin/knowledge'
+    | '/admin/knowledge-list'
+    | '/admin/mini-app-quotas'
+    | '/admin/rag-debug'
+    | '/admin/roles'
+    | '/admin/system-prompts'
+    | '/admin/users'
+    | '/developers/keys'
+    | '/docs/internal-auth'
+    | '/docs/platform'
+    | '/mini-apps/$id'
+    | '/admin/'
+    | '/developers/'
+    | '/mini-apps/'
+    | '/admin/security/application-keys'
+    | '/admin/share-key/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChatRoute: typeof ChatRoute
+  CtoRoute: typeof CtoRoute
+  InstallRoute: typeof InstallRoute
+  IntegrationRoute: typeof IntegrationRoute
+  KnowledgeRoute: typeof KnowledgeRoute
+  LightConstitutionRoute: typeof LightConstitutionRoute
+  LoginRoute: typeof LoginRoute
+  OnboardingRoute: typeof OnboardingRoute
+  ProfileRoute: typeof ProfileRoute
+  SettingsRoute: typeof SettingsRoute
+  WalletRoute: typeof WalletRoute
+  AdminApiAnalyticsRoute: typeof AdminApiAnalyticsRoute
+  AdminApiKeysRoute: typeof AdminApiKeysRoute
+  AdminChatRoute: typeof AdminChatRoute
+  AdminCreditUsageRoute: typeof AdminCreditUsageRoute
+  AdminKnowledgeRoute: typeof AdminKnowledgeRoute
+  AdminKnowledgeListRoute: typeof AdminKnowledgeListRoute
+  AdminMiniAppQuotasRoute: typeof AdminMiniAppQuotasRoute
+  AdminRagDebugRoute: typeof AdminRagDebugRoute
+  AdminRolesRoute: typeof AdminRolesRoute
+  AdminSystemPromptsRoute: typeof AdminSystemPromptsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  DevelopersKeysRoute: typeof DevelopersKeysRoute
+  DocsInternalAuthRoute: typeof DocsInternalAuthRoute
+  DocsPlatformRoute: typeof DocsPlatformRoute
+  MiniAppsIdRoute: typeof MiniAppsIdRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  DevelopersIndexRoute: typeof DevelopersIndexRoute
+  MiniAppsIndexRoute: typeof MiniAppsIndexRoute
+  AdminSecurityApplicationKeysRoute: typeof AdminSecurityApplicationKeysRoute
+  AdminShareKeyIdRoute: typeof AdminShareKeyIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +456,259 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cto': {
+      id: '/cto'
+      path: '/cto'
+      fullPath: '/cto'
+      preLoaderRoute: typeof CtoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/install': {
+      id: '/install'
+      path: '/install'
+      fullPath: '/install'
+      preLoaderRoute: typeof InstallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/integration': {
+      id: '/integration'
+      path: '/integration'
+      fullPath: '/integration'
+      preLoaderRoute: typeof IntegrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/knowledge': {
+      id: '/knowledge'
+      path: '/knowledge'
+      fullPath: '/knowledge'
+      preLoaderRoute: typeof KnowledgeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/light-constitution': {
+      id: '/light-constitution'
+      path: '/light-constitution'
+      fullPath: '/light-constitution'
+      preLoaderRoute: typeof LightConstitutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wallet': {
+      id: '/wallet'
+      path: '/wallet'
+      fullPath: '/wallet'
+      preLoaderRoute: typeof WalletRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/api-analytics': {
+      id: '/admin/api-analytics'
+      path: '/admin/api-analytics'
+      fullPath: '/admin/api-analytics'
+      preLoaderRoute: typeof AdminApiAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/api-keys': {
+      id: '/admin/api-keys'
+      path: '/admin/api-keys'
+      fullPath: '/admin/api-keys'
+      preLoaderRoute: typeof AdminApiKeysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/chat': {
+      id: '/admin/chat'
+      path: '/admin/chat'
+      fullPath: '/admin/chat'
+      preLoaderRoute: typeof AdminChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/credit-usage': {
+      id: '/admin/credit-usage'
+      path: '/admin/credit-usage'
+      fullPath: '/admin/credit-usage'
+      preLoaderRoute: typeof AdminCreditUsageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/knowledge': {
+      id: '/admin/knowledge'
+      path: '/admin/knowledge'
+      fullPath: '/admin/knowledge'
+      preLoaderRoute: typeof AdminKnowledgeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/knowledge-list': {
+      id: '/admin/knowledge-list'
+      path: '/admin/knowledge-list'
+      fullPath: '/admin/knowledge-list'
+      preLoaderRoute: typeof AdminKnowledgeListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/mini-app-quotas': {
+      id: '/admin/mini-app-quotas'
+      path: '/admin/mini-app-quotas'
+      fullPath: '/admin/mini-app-quotas'
+      preLoaderRoute: typeof AdminMiniAppQuotasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/rag-debug': {
+      id: '/admin/rag-debug'
+      path: '/admin/rag-debug'
+      fullPath: '/admin/rag-debug'
+      preLoaderRoute: typeof AdminRagDebugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/roles': {
+      id: '/admin/roles'
+      path: '/admin/roles'
+      fullPath: '/admin/roles'
+      preLoaderRoute: typeof AdminRolesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/system-prompts': {
+      id: '/admin/system-prompts'
+      path: '/admin/system-prompts'
+      fullPath: '/admin/system-prompts'
+      preLoaderRoute: typeof AdminSystemPromptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developers/': {
+      id: '/developers/'
+      path: '/developers'
+      fullPath: '/developers/'
+      preLoaderRoute: typeof DevelopersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developers/keys': {
+      id: '/developers/keys'
+      path: '/developers/keys'
+      fullPath: '/developers/keys'
+      preLoaderRoute: typeof DevelopersKeysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/internal-auth': {
+      id: '/docs/internal-auth'
+      path: '/docs/internal-auth'
+      fullPath: '/docs/internal-auth'
+      preLoaderRoute: typeof DocsInternalAuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/platform': {
+      id: '/docs/platform'
+      path: '/docs/platform'
+      fullPath: '/docs/platform'
+      preLoaderRoute: typeof DocsPlatformRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mini-apps/': {
+      id: '/mini-apps/'
+      path: '/mini-apps'
+      fullPath: '/mini-apps/'
+      preLoaderRoute: typeof MiniAppsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mini-apps/$id': {
+      id: '/mini-apps/$id'
+      path: '/mini-apps/$id'
+      fullPath: '/mini-apps/$id'
+      preLoaderRoute: typeof MiniAppsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/security/application-keys': {
+      id: '/admin/security/application-keys'
+      path: '/admin/security/application-keys'
+      fullPath: '/admin/security/application-keys'
+      preLoaderRoute: typeof AdminSecurityApplicationKeysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/share-key/$id': {
+      id: '/admin/share-key/$id'
+      path: '/admin/share-key/$id'
+      fullPath: '/admin/share-key/$id'
+      preLoaderRoute: typeof AdminShareKeyIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChatRoute: ChatRoute,
+  CtoRoute: CtoRoute,
+  InstallRoute: InstallRoute,
+  IntegrationRoute: IntegrationRoute,
+  KnowledgeRoute: KnowledgeRoute,
+  LightConstitutionRoute: LightConstitutionRoute,
+  LoginRoute: LoginRoute,
+  OnboardingRoute: OnboardingRoute,
+  ProfileRoute: ProfileRoute,
+  SettingsRoute: SettingsRoute,
+  WalletRoute: WalletRoute,
+  AdminApiAnalyticsRoute: AdminApiAnalyticsRoute,
+  AdminApiKeysRoute: AdminApiKeysRoute,
+  AdminChatRoute: AdminChatRoute,
+  AdminCreditUsageRoute: AdminCreditUsageRoute,
+  AdminKnowledgeRoute: AdminKnowledgeRoute,
+  AdminKnowledgeListRoute: AdminKnowledgeListRoute,
+  AdminMiniAppQuotasRoute: AdminMiniAppQuotasRoute,
+  AdminRagDebugRoute: AdminRagDebugRoute,
+  AdminRolesRoute: AdminRolesRoute,
+  AdminSystemPromptsRoute: AdminSystemPromptsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  DevelopersKeysRoute: DevelopersKeysRoute,
+  DocsInternalAuthRoute: DocsInternalAuthRoute,
+  DocsPlatformRoute: DocsPlatformRoute,
+  MiniAppsIdRoute: MiniAppsIdRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  DevelopersIndexRoute: DevelopersIndexRoute,
+  MiniAppsIndexRoute: MiniAppsIndexRoute,
+  AdminSecurityApplicationKeysRoute: AdminSecurityApplicationKeysRoute,
+  AdminShareKeyIdRoute: AdminShareKeyIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
