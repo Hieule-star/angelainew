@@ -4,6 +4,7 @@ import { MessageCircle, BookOpen, Sparkles, Heart, Users, Wallet, Download, Scro
 import { Button } from '@/components/ui/button';
 import { Layout } from '@/components/layout/Layout';
 import angelLogo from '@/assets/angel-logo.png';
+import camlyCoinAsset from '@/assets/camly-coin.png.asset.json';
 
 const features = [
   {
