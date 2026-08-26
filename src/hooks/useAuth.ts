@@ -8,7 +8,6 @@ export function useAuth() {
   const { setUser, setSession, logout } = useUserStore();
 
   useEffect(() => {
-    console.log('[dbg] useAuth effect start');
     // Set up auth state listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
@@ -34,7 +33,6 @@ export function useAuth() {
 
     // THEN check for existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
-      console.log('[dbg] getSession resolved', !!session);
       setSession(session);
       if (session?.user) {
         fetchProfile(session.user.id);
