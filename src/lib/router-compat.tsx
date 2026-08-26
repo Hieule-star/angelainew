@@ -29,8 +29,8 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
 });
 
 export interface NavLinkProps extends Omit<LinkProps, "className" | "children"> {
-  className?: string | ((props: { isActive: boolean }) => string);
-  children?: ReactNode | ((props: { isActive: boolean }) => ReactNode);
+  className?: string | ((props: { isActive: boolean; isPending: boolean }) => string);
+  children?: ReactNode | ((props: { isActive: boolean; isPending: boolean }) => ReactNode);
   end?: boolean;
 }
 
@@ -44,10 +44,10 @@ export const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(function NavL
     <Link
       ref={ref}
       to={to}
-      className={typeof className === "function" ? className({ isActive }) : className}
+      className={typeof className === "function" ? className({ isActive, isPending: false }) : className}
       {...rest}
     >
-      {typeof children === "function" ? children({ isActive }) : children}
+      {typeof children === "function" ? children({ isActive, isPending: false }) : children}
     </Link>
   );
 });
@@ -77,7 +77,7 @@ export function useNavigate() {
   );
 }
 
-export function useSearchParams(): [URLSearchParams, (next: URLSearchParams | Record<string, string>) => void] {
+export function useSearchParams(): [URLSearchParams, (next: URLSearchParams | Record<string, string>, options?: { replace?: boolean }) => void] {
   const searchStr = useRouterState({ select: (s) => s.location.searchStr });
   const navigate = useTanstackNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -85,11 +85,11 @@ export function useSearchParams(): [URLSearchParams, (next: URLSearchParams | Re
   const params = useMemo(() => new URLSearchParams(searchStr ?? ""), [searchStr]);
 
   const setParams = useCallback(
-    (next: URLSearchParams | Record<string, string>) => {
+    (next: URLSearchParams | Record<string, string>, options?: { replace?: boolean }) => {
       const usp = next instanceof URLSearchParams ? next : new URLSearchParams(next);
       const qs = usp.toString();
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      navigate({ to: `${pathname}${qs ? `?${qs}` : ""}` } as any);
+      navigate({ to: `${pathname}${qs ? `?${qs}` : ""}`, replace: options?.replace } as any);
     },
     [navigate, pathname],
   );
