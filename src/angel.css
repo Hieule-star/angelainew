@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Holy White & Light */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 20%;
+
+    /* Cards with subtle warmth */
+    --card: 40 50% 99%;
+    --card-foreground: 240 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 20%;
+
+    /* Divine Golden */
+    --primary: 45 85% 65%;
+    --primary-foreground: 40 30% 15%;
+
+    /* Celestial Pink */
+    --secondary: 340 70% 92%;
+    --secondary-foreground: 340 40% 30%;
+
+    /* Soft Muted */
+    --muted: 40 30% 96%;
+    --muted-foreground: 240 5% 50%;
+
+    /* Light Blue Accent */
+    --accent: 195 70% 94%;
+    --accent-foreground: 200 50% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 30% 92%;
+    --input: 40 30% 92%;
+    --ring: 45 85% 65%;
+
+    --radius: 1rem;
+
+    /* Custom Angel Colors */
+    --angel-gold: 45 85% 76%;
+    --angel-pink: 340 70% 92%;
+    --angel-blue: 195 70% 94%;
+    --angel-white: 0 0% 100%;
+    --angel-glow: 45 100% 85%;
+
+    /* Gradients */
+    --gradient-divine: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(45 60% 97%) 50%, hsl(340 50% 97%) 100%);
+    --gradient-golden: linear-gradient(135deg, hsl(45 85% 76%) 0%, hsl(40 90% 70%) 100%);
+    --gradient-celestial: linear-gradient(180deg, hsl(195 70% 97%) 0%, hsl(340 60% 97%) 50%, hsl(45 50% 97%) 100%);
+    --gradient-halo: radial-gradient(circle, hsl(45 100% 90% / 0.6) 0%, hsl(45 100% 95% / 0) 70%);
+
+    /* Shadows */
+    --shadow-divine: 0 4px 30px hsl(45 100% 80% / 0.15);
+    --shadow-soft: 0 2px 20px hsl(0 0% 0% / 0.05);
+    --shadow-glow: 0 0 40px hsl(45 100% 80% / 0.3);
+
+    --sidebar-background: 40 30% 98%;
+    --sidebar-foreground: 240 10% 20%;
+    --sidebar-primary: 45 85% 65%;
+    --sidebar-primary-foreground: 40 30% 15%;
+    --sidebar-accent: 340 70% 95%;
+    --sidebar-accent-foreground: 340 40% 30%;
+    --sidebar-border: 40 30% 92%;
+    --sidebar-ring: 45 85% 65%;
+  }
+
+  .dark {
+    --background: 240 15% 8%;
+    --foreground: 40 30% 95%;
+
+    --card: 240 15% 12%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 240 15% 10%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 45 85% 70%;
+    --primary-foreground: 240 15% 8%;
+
+    --secondary: 340 40% 25%;
+    --secondary-foreground: 340 70% 90%;
+
+    --muted: 240 10% 18%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 195 40% 20%;
+    --accent-foreground: 195 70% 90%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 45 85% 70%;
+
+    --angel-gold: 45 70% 60%;
+    --angel-pink: 340 50% 30%;
+    --angel-blue: 195 50% 25%;
+    --angel-white: 240 15% 95%;
+    --angel-glow: 45 80% 50%;
+
+    --sidebar-background: 240 15% 10%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 45 85% 70%;
+    --sidebar-primary-foreground: 240 15% 8%;
+    --sidebar-accent: 340 40% 20%;
+    --sidebar-accent-foreground: 340 70% 90%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 45 85% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Divine Glow Effects */
+  .glow-divine {
+    box-shadow: 0 0 40px hsl(var(--angel-glow) / 0.4), 0 0 80px hsl(var(--angel-glow) / 0.2);
+  }
+
+  .glow-soft {
+    box-shadow: 0 0 20px hsl(var(--angel-glow) / 0.2);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--angel-glow) / 0.5);
+  }
+
+  /* Gradient Backgrounds */
+  .bg-divine {
+    background: var(--gradient-divine);
+  }
+
+  .bg-celestial {
+    background: var(--gradient-celestial);
+  }
+
+  .bg-halo {
+    background: var(--gradient-halo);
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl;
+  }
+
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-lg border border-white/40;
+  }
+
+  /* Floating Animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 4s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  /* Text Gradient */
+  .text-gradient-divine {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(45 85% 55%) 0%, hsl(340 60% 65%) 100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(45 100% 80% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(45 100% 80% / 0.5);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
