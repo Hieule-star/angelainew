@@ -20,7 +20,27 @@ async function handleKeepalive(request: Request): Promise<Response> {
     request.headers.get('x-keepalive-secret') ?? url.searchParams.get('secret') ?? '';
 
   if (!timingSafeEqual(provided, expected)) {
-    return Response.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
+    // Debug info: never reveals the secret itself, only shape mismatches.
+    const debug = {
+      provided_via: request.headers.get('x-keepalive-secret')
+        ? 'header'
+        : url.searchParams.get('secret')
+          ? 'query'
+          : 'none',
+      provided_length: provided.length,
+      expected_length: expected.length,
+      length_match: provided.length === expected.length,
+      has_whitespace: provided !== provided.trim(),
+      reason:
+        provided.length === 0
+          ? 'missing_secret'
+          : provided.trim() === expected
+            ? 'secret_has_surrounding_whitespace'
+            : provided.length !== expected.length
+              ? 'wrong_secret_length'
+              : 'wrong_secret_value',
+    };
+    return Response.json({ ok: false, error: 'Unauthorized', debug }, { status: 401 });
   }
 
   const source = url.searchParams.get('source') ?? 'github-action';
