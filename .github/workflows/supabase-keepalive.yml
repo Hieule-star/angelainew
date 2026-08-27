@@ -21,16 +21,28 @@ jobs:
             echo "Missing KEEPALIVE_URL or KEEPALIVE_SECRET repository secret."
             exit 1
           fi
+          echo "URL: $KEEPALIVE_URL"
+          echo "Secret length: ${#KEEPALIVE_SECRET}"
+          case "$KEEPALIVE_SECRET" in
+            *[[:space:]]*) echo "WARNING: secret contains whitespace/newline" ;;
+          esac
+
           for attempt in 1 2 3; do
-            echo "Attempt $attempt..."
-            if curl --fail --silent --show-error --max-time 60 \
+            echo "----- Attempt $attempt -----"
+            status=$(curl --silent --show-error --max-time 60 \
+              -o /tmp/keepalive-body.txt -w '%{http_code}' \
               -H "x-keepalive-secret: $KEEPALIVE_SECRET" \
-              "$KEEPALIVE_URL?source=github-action"; then
-              echo ""
-              echo "Keepalive ping succeeded."
+              "$KEEPALIVE_URL?source=github-action") || status="000"
+            echo "HTTP status: $status"
+            echo "Response body:"
+            cat /tmp/keepalive-body.txt || true
+            echo ""
+            if [ "$status" = "200" ]; then
+              echo "Keepalive ping succeeded on attempt $attempt."
               exit 0
             fi
-            sleep 30
+            echo "Attempt $attempt failed with status $status."
+            [ "$attempt" != "3" ] && sleep 30
           done
-          echo "Keepalive ping failed after 3 attempts."
+          echo "Keepalive ping failed after 3 attempts (last status: $status)."
           exit 1
