@@ -72,19 +72,23 @@ export default function Index() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 flex flex-wrap items-center justify-center gap-3"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-center"
           >
+            <span className="text-gradient-divine">ANGEL AI</span>
+          </motion.h1>
+
+          {/* Logo Camly Coin bên dưới dòng ANGEL AI */}
+          <motion.div className="flex justify-center mb-6">
             <motion.img
               src={camlyCoinAsset.url}
               alt="Camly Coin"
-              className="inline-block h-[0.8em] w-[0.8em] min-h-8 min-w-8 max-h-24 max-w-24 shrink-0 align-middle drop-shadow-[0_0_12px_rgba(225,188,58,0.45)]"
+              className="h-16 w-16 md:h-20 md:w-20 drop-shadow-[0_0_12px_rgba(225,188,58,0.45)]"
               initial={{ opacity: 0, scale: 0.4, rotate: -30 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ delay: 0.6, duration: 0.7, ease: 'easeOut' }}
               whileHover={{ scale: 1.1, rotate: 8 }}
             />
-            <span className="text-gradient-divine">ANGEL AI</span>
-          </motion.h1>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
