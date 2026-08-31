@@ -4,6 +4,7 @@ import { MessageCircle, BookOpen, Sparkles, Heart, Users, Wallet, Download, Scro
 import { Button } from '@/components/ui/button';
 import { Layout } from '@/components/layout/Layout';
 import angelLogo from '@/assets/angel-logo.png';
+import funMoneyLogo from '@/assets/fun-money.png';
 import camlyCoinAsset from '@/assets/camly-coin.png.asset.json';
 
 const features = [
@@ -77,12 +78,21 @@ export default function Index() {
             <span className="text-gradient-divine">ANGEL AI</span>
           </motion.h1>
 
-          {/* Logo Camly Coin bên dưới dòng ANGEL AI */}
-          <motion.div className="flex justify-center mb-6">
+          {/* Coin logos below ANGEL AI */}
+          <motion.div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-6">
+            <motion.img
+              src={funMoneyLogo}
+              alt="FUN Money"
+              className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover drop-shadow-[0_0_12px_rgba(225,188,58,0.45)]"
+              initial={{ opacity: 0, scale: 0.4, rotate: 30 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ delay: 0.55, duration: 0.7, ease: 'easeOut' }}
+              whileHover={{ scale: 1.1, rotate: -8 }}
+            />
             <motion.img
               src={camlyCoinAsset.url}
               alt="Camly Coin"
-              className="h-16 w-16 md:h-20 md:w-20 drop-shadow-[0_0_12px_rgba(225,188,58,0.45)]"
+              className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover drop-shadow-[0_0_12px_rgba(225,188,58,0.45)]"
               initial={{ opacity: 0, scale: 0.4, rotate: -30 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ delay: 0.6, duration: 0.7, ease: 'easeOut' }}
